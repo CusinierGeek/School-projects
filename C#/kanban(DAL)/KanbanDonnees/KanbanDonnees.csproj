@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0-preview.3.23174.2" />
+        <PackageReference Include="MySql.Data" Version="8.0.32.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Resources\bd-mysql.sql" />
+        <EmbeddedResource Include="Resources\bd-mysql.sql">
+            <LogicalName>bd-mysql.sql</LogicalName>
+        </EmbeddedResource>
+
+
+        <None Remove="Resources\bd-sqlite.sql" />
+        <EmbeddedResource Include="Resources\bd-sqlite.sql">
+            <LogicalName>bd-sqlite.sql</LogicalName>
+        </EmbeddedResource>
+    </ItemGroup>
+</Project>

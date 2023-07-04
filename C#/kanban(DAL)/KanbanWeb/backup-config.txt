@@ -1,0 +1,5 @@
+"TypePersistance": "mysql",
+"ChaineDeConnexion": "server=localhost;port=3306;uid=dev;pwd=dev;database=projet"
+
+"TypePersistance": "sqlite",
+"ChaineDeConnexion": "projet.sqlite"
