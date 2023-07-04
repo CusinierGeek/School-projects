@@ -1,0 +1,91 @@
+#conteneur {
+  height: 400px;
+}
+
+#div-section-gauche {
+  width: 275px;
+  height: 100%;
+  float: left;
+}
+
+#div-section-droite {
+  min-width: 400px;
+  max-width: calc(100% - 275px);
+  width: 400px;
+  min-height: 400px;
+  height: 100%;
+  float: left;
+  resize: both;
+  overflow: hidden;
+}
+
+/*
+* Paramètres
+*/
+
+#fiedset-parametres {
+  height: 100%;
+  margin-right: 8px;
+  box-sizing: border-box;
+}
+
+.div-rangee {
+  margin: 16px 0px;
+}
+
+.input-choix-etiquette {
+  margin-left: 16px;
+}
+
+#textarea-etiquette {
+  width: 215px;
+  height: 50px;
+  resize: none;
+}
+
+/*
+* Aperçu
+*/
+
+#fieldset-apercu {
+  height: 100%;
+  margin-left: 8px;
+  box-sizing: border-box;
+}
+
+#div-apercu-image {
+  height: calc(100% - 19px); /* -19 fieldset */
+  text-align: center;
+  position: relative;
+  background-color: black;
+}
+
+#img-apercu {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.p-texte-meme {
+  width: 100%;
+  position: absolute;
+  margin: 8px auto;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+#p-texte-haut {
+  top: 0px;
+}
+
+#p-texte-milieu {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#p-texte-bas {
+  bottom: 0px;
+}

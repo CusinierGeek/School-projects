@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <h1>Créateur de mèmes ( ͡° ͜ʖ ͡°)</h1>
+        <div id="conteneur">
+            <div id="div-section-gauche">
+                <fieldset id="fiedset-parametres">
+                    <legend>Paramètres</legend>
+
+                    <h3>Image</h3>
+
+                    <div class="div-rangee">
+                        <label>Gabarit</label>
+                        <select>
+                            <option value="images/bebe.jpg">Bébé</option>
+                            <option value="images/bob.png">Bob</option>
+                            <option value="images/chan.jpg">Jackie Chan</option>
+                            <option value="images/penses-y.jpg">Penses-y!</option>
+                            <option value="images/extraterrestres.jpg">Extraterrestres</option>
+                            <option value="images/picard.jpg">Picard</option>
+                            <option value="images/buzz-et-woody.jpg">Buzz et Woody</option>
+                        </select>
+                    </div>
+
+                    <div class="div-rangee">
+                        <label>Utiliser bandes blanches</label>
+                        <input type="checkbox" />
+                    </div>
+
+                    <h3>Étiquettes</h3>
+
+                    <div class="div-rangee">
+                        <label><input type="radio" name="choix-etiquette" value="haut" checked /> Haut</label>
+                        <label><input type="radio" name="choix-etiquette" value="milieu" class="input-choix-etiquette" /> Milieu</label>
+                        <label><input type="radio" name="choix-etiquette" value="bas" class="input-choix-etiquette" /> Bas</label>
+                    </div>
+
+                    <div class="div-rangee">
+                        <label>Texte</label><br />
+                        <textarea id="textarea-etiquette"></textarea>
+                    </div>
+
+                    <div class="div-rangee">
+                        <label>Police</label>
+                        <select>
+                            <option value="arial, sans-serif">Arial</option>
+                            <option value="cursive, sans-serif">Cursive</option>
+                            <option value="impact, sans-serif">Impact</option>
+                            <option value="monaco, monospace">Monaco</option>
+                            <option value="times, serif">Times</option>
+                        </select>
+                    </div>
+
+                    <div class="div-rangee">
+                        <label>Taille</label>
+                        <input type="number" min="8" max="96" value="16" />
+                        <label>Couleur</label>
+                        <input type="color" value="#FFFFFF" />
+                    </div>
+                </fieldset>
+            </div>
+
+            <div id="div-section-droite">
+                <fieldset id="fieldset-apercu">
+                    <legend>Aperçu</legend>
+
+                    <div id="div-apercu-image">
+                        <img id="img-apercu" src="images/bebe.jpg" />
+                        <p id="p-texte-haut" class="p-texte-meme" style="font-size: 16px; color: #ffffff; font-family: arial, sans-serif">Écrire</p>
+                        <p id="p-texte-milieu" class="p-texte-meme" style="font-size: 16px; color: #ffffff; font-family: arial, sans-serif">du texte</p>
+                        <p id="p-texte-bas" class="p-texte-meme" style="font-size: 16px; color: #ffffff; font-family: arial, sans-serif">ici...</p>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <script src="/script.js"></script>
+    </body>
+</html>
