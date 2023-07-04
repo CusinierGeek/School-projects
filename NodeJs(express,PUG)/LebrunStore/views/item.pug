@@ -1,0 +1,20 @@
+extends layouts/main
+block head 
+    title Magasin Lebrun/item
+
+block content
+    .item-wraper
+        .item-container 
+            .item-image
+                img(src = item.image_url)
+            .item-info
+                h2 #{item.name}
+                p #{item.description}
+                p Prix: #{item.sale_price.toFixed(2)} $
+                p sku: #{item.sku}
+                p Notes : #{item.average_product_rating} / 5 sur #{item.num_reviews} avis
+
+
+                
+            
+            

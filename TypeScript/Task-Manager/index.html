@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker 1.0</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1 id="title">Super Duper Task Manager</h1>
+      </header>
+      <section id="inputSection">
+        <h4>New Task</h4>
+        <div class="dataEntry">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title-input" />
+        </div>
+        <div class="dataEntry">
+          <label for="description">Description</label>
+          <textarea cols="80" name="description" id="description-input"></textarea>
+        </div>
+        <button id="addTaskBtn" class=" commandBtn">Add Task</button>
+      </section>
+      <section id="displaySection">
+        <table class="container">
+          <thead id="tasksTableHeader">
+            <th>Task Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Last Modified</th>
+            <th>Update/Delete</th>
+          </thead>
+          <tbody id="tasksTable">
+            <!-- Cette ligne est un exemple de quoi doit avoir l'air l'affichage d'une tâche
+            examinez bien la structure pour pouvoir la recréer par le code dans votre fonction
+          showlist, les classes doivent être présentes pour que le css fonctionne -->
+            <tr class="tableRow">
+              <td>1</td>
+              <td>Do the work</td>
+              <td>Put in the hours and learn</td>
+              <td><input type="checkbox" name="completed" /></td>
+              <td>2023-05-24 14:33:02</td>
+              <td><button class="commandBtn">Update</button><button class="commandBtn">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+tr
+    td #{line.sku}
+    td #{line.quantity}
+    td #{line.name}
+    td #{line.sale_price}
+    td #{(line.amount).toFixed(2)}
+    td
+        img(src=line.image_url, width="50px")
+    td 
+       i.fas.fa-edit#edit(data-sku=line.sku)     
+       i.fas.fa-trash-alt#delete(data-sku=line.sku)
+       a(href="/items/sku/" + line.sku) 
+         i.fas.fa-info#info
+        
+            

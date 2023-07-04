@@ -1,0 +1,14 @@
+tr(id=item.sku)
+    td
+        img(src=item.image_url, width="50px")
+    td #{item.sku}
+    td #{item.brand}
+    td #{item.name}
+    td #{item.sale_price.toFixed(2)}
+    td   
+       i.fas.fa-edit#edit(data-sku=item.sku onclick=`editItem(${JSON.stringify(item)})`)     
+       i.fas.fa-trash-alt#delete(onclick=`deleteItem(${JSON.stringify(item)})`)
+       a(href="/items/sku/" + item.sku) 
+         i.fas.fa-info#info
+        
+             

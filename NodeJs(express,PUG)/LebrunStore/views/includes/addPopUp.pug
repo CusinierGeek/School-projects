@@ -1,0 +1,22 @@
+.popup-content
+      .popup-header
+        span.popup-title Ajouter un article
+      .popup-body
+        #addForm
+          .top
+            img#addImage(src="/images/placeholder.jpg")
+            input#imageInput(type="file", name="image", required,style="display:none;")
+            label.skuLabel(for="sku") SKU
+            input.sku(type="text", name="sku", placeholder="SKU", required)
+            label.priceLabel(for="price") Prix
+            input.price(type="text", name="price", placeholder="Prix", required)
+          label(for="brand") Marque
+          input.brand(type="text", name="brand", placeholder="Marque", required)
+          label(for="name") Nom
+          input.name(type="text", name="name", placeholder="Nom", required)
+          label(for="description") Description
+          textarea.description(type="text", name="description",required rows="8")
+      p.error 
+      .popup-footer
+        button#addConfirm Ajouter
+        button#addCancel Annuler    

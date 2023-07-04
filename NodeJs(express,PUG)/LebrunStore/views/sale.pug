@@ -1,0 +1,49 @@
+extends layouts/main
+block head 
+  title Magasin Lebrun/vente 
+  script(src="/javascript/sale.js" type="module", defer)
+  
+block content
+  form(method="post" action="/line")
+    select#mySelect(name="sku" class="input-text" )
+      option
+      each item in items
+        option(value=item.sku)= item.sku + ": " + item.name
+    input(type="number" name="quantity" placeholder="Quantité"   )
+    button.btn(type="submit") Ajouter
+  p.error #{error}
+ 
+
+  table
+    tr
+      th SKU
+      th Qté
+      th Nom
+      th Prix
+      th Montant
+      th Image
+      th 
+      
+      
+    each line in lines
+      include ./includes/line.pug
+
+  .total
+    .total-container
+      p
+        span Sous-total:
+        span #{invoice.subTotal} $
+      p
+        span TPS:
+        span #{invoice.gst} $
+      p
+        span TVQ:
+        span #{invoice.qst} $
+      .divbar
+      p
+        span Total:
+        span #{invoice.total} $
+
+    button.btn#finalisation Terminer Vente
+  
+

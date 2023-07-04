@@ -1,0 +1,52 @@
+extends layouts/main
+block head 
+    title Magasin Lebrun/items
+    script(src="/javascript/items.js" defer)
+block content
+ 
+
+  
+  form.itemsPerPage(action=`/items/${page}`, method="get")
+    label(for="itemsPerPage") Afficher:
+    select(name="itemsPerPage", id="itemsPerPage", onchange="this.form.submit()")
+      option(value="5" selected=itemsPerPage === 5) 5 article par page
+      option(value="10" selected=itemsPerPage === 10) 10 article par page
+      option(value="20" selected=itemsPerPage === 20) 20 article par page
+      option(value="30" selected=itemsPerPage === 30) 30 article par page
+      option(value="50" selected=itemsPerPage === 50) 50 article par page
+      option(value="-1" selected=itemsPerPage === -1) Tous les articles
+  table.itemsTable             
+    tr
+      th image
+      th SKU
+      th Marque
+      th Produit
+      th prix
+      th 
+        i.fa.fa-solid.fa-square-plus(onclick="showAddPopup()")
+      
+      
+    each item in items
+      include ./includes/lineItems.pug
+
+block pagination
+  if totalPages > 0
+    .pagination
+      if page > 1
+        a.pagination-item(href=`/items/1` class='arrow') «
+      if page > 1
+        a.pagination-item(href=`/items/${page - 1}?itemsPerPage=${itemsPerPage||10}` class='arrow') ←
+      each pageNumber in Array(endPage - startPage + 1).fill().map((_, i) => startPage + i)
+        a.pagination-item(href=`/items/${pageNumber}?itemsPerPage=${itemsPerPage||10}` class=(pageNumber === page ? 'active' : '')) #{pageNumber}
+      if page < totalPages
+        a.pagination-item(href=`/items/${page + 1}?itemsPerPage=${itemsPerPage||10}` class='arrow') →
+      
+      if endPage < totalPages
+        a.pagination-item(href=`/items/${totalPages}?itemsPerPage=${itemsPerPage||10}` class='arrow') »
+    .popup#deletePopup 
+      include ./includes/delPopup.pug
+    .popup#addPopup
+      include ./includes/addPopUp.pug
+
+    .popup#editPopup
+      include ./includes/addPopUp.pug
